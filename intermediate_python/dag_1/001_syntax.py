@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+
+# kommentarer starter med '#'
+
 # Variabelnavne og funktionsnavne SKAL starte med et bogstav, "_", dvs. bogstaver, som ikke kan forvæksles med en operator.
 # Fx:
 a = 1
@@ -9,6 +12,17 @@ n = None
 t = True
 f = False
 # 123_a = "FAILS" # Må ikke starte med et tal.
+
+lang_tekst = """ Man kan have linjeskift i 
+strings hvis man bruger 3 "'er
+"""
+
+ping_string = ' man behøver ikke bruge " til strenge '
+
+lang_ping_string = ''' 3 'er er også ok '''
+
+# Mange bruger " eller """  til tekst og '' til nøgler og id'er.
+
 
 # Epressions:
 # Må alle de normale operatorer, fx +, -, *, 
