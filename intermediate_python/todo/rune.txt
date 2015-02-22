@@ -1,0 +1,5 @@
+Dynamic and lexical scoping
+The lambda operator and higher-order functions
+Databases
+Web programming Django
+Threads and concurrency

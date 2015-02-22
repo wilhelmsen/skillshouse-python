@@ -17,6 +17,7 @@ f = False
 "fisk" + "pølse"
 a*12
 
+# Indentering!! 4 spaces (pep8).
 try: 
     "a"+2
 except TypeError, e:
