@@ -73,3 +73,21 @@ print str(1)
 print "%s %d %.2f" % (1.123, 1.223, 1.123)
 print "To {be} or not to {be}".format(be="bee")
 
+
+# Øvelse 
+#
+# Lav en for-løkke i  ipython der løver en for-løkke igennem med hhv en liste
+# og en dict.
+#
+#
+# brug ipython og tab completion til at finde ud af hvor mange 'a' er der er i 
+a = "Anders fra Randers"
+
+
+# Svar
+"Anders fra randers".lower().count('a')
+
+
+
+
+
