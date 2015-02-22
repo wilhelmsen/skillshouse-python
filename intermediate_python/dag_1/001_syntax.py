@@ -98,3 +98,11 @@ while True:
         break
 
 # switch/case skal laves med if/else.
+
+
+# Øvelse 
+#
+# Prøv ipython terminalen af og prøv nogle if sætninger af
+# og tildel nogle værdier 
+
+
