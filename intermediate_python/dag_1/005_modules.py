@@ -33,7 +33,8 @@ from os import listdir
 
 listdir('.')
 
-# Det er en dårlig ide at bruge wildcards
+# Det er en dårlig ide at bruge wildcards, det forurener ens namespace det gør
+# det også svært at finde ud af i hvilke moduler funktionerne ligger.
 from os import *
 
 print environ['HOME']
@@ -45,7 +46,7 @@ print operating_system_module.environ['HOME']
 
 
 #
-# øvelse åben en ipython terminal og inspicer os med
+# Øvelse: åben en ipython terminal og inspicer os med
 #
 # import os
 # help(os)
