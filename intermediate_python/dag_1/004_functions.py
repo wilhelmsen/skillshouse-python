@@ -2,44 +2,44 @@
 # coding: utf-8
 
 
-# Scoping 
-# navne bliver fundet af python i følgene rækkefølge: 
+# Scoping
+# navne bliver fundet af python i følgene rækkefølge:
 # LEGB rule (Local, Enclosing, Global, Built-in)
 # dvs
-#   * Det lokale scope f.eks funktion
-#   * Hvis der er onkringliggede scopes ... f.eks funktioner
-#   * Globalt scope
-#   * Indbyggede
+#   * først søges der i det lokale scope f.eks i  funktion.
+#   * Hvis der er onkringliggede scopes så søges der i dem.
+#   * Ellers søges der i globalt scope.
+#   * Tilsidst søges der i det indbyggede scope.
 
-# Den indbyggede variable __name__ bliver automatisk sat til navnet på modulet
+# Den indbyggede variable "__name__" bliver automatisk sat til navnet på modulet
 # her __main__ fordi vi kører modulet som script
 print(__name__)
 
-# Her sætter vi __name__ som en global variable
-
+# Her sætter vi "__name__" som en global variable i stedet for en builtin
 __name__ = "GLOBAL"
 print(__name__)
 
 
-def set_and_print_name(name):
+# Her sætter vi __name__ i en funktion
+def set_and_print_name():
 
     # local scope
-    __name__ = name
+    __name__ = "local"
     print(__name__)
 
     # inclosing
     def inclosing_name():
+        # __name__ bliver nu fundet i "enclosing scope"
         print("inclosing")
         print(__name__)
+
     inclosing_name()
-
-    # local name er ikke ændret
-    print __name__
-
-set_and_print_name('LOCAL')
+set_and_print_name()
 
 # Globalt __name__ er ikke ændret
 print __name__
+
+
 
 
 # Nu skal vi ændre globale vaiable i en funktion
@@ -47,12 +47,13 @@ def set_and_print_name_global(name):
     # her definerer vi at vi bruger den globale variable. Det skal gøres i
     # starten af funktionen
     global __name__
-    __name__="local"
+    __name__ = "local"
 
 print __name__
 
-# nogle scopes bliver hængende
 
+
+# I forløkker bliver 
 for i in range(100):
     pass
 
@@ -96,9 +97,15 @@ change_test()
 # I python 2 kan man ikke ændre i parrent scopes som ikke er globale
 # I python 3 kan man bruge nonlocal keyword
 
+# Øvelse hvad sker der her ... virker det
 
-
-
+# GLOBAL_VAR = "test"
+# def change_test():
+#     print GLOBAL_VAR
+#     GLOBAL_VAR = "local"
+# 
+# Svar nej ... python fortolkeren bliver forviret man kan ikke mixe globalt og
+# local scope.
 
 
 
