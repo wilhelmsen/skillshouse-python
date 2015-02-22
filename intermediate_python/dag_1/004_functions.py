@@ -167,7 +167,26 @@ l(3) # giver 5
 l = lambda x,y: x+y+2
 l(3,3)  # giver 8
 
-# lambda funktioner har begrænset funktionalitet de er gode til f.eks 
+# lambda funktioner har begrænset funktionalitet de er gode til f.eks maps og reduce
+
+print( map(lambda x: x+3, range(10)))  # lægger 3 til alle tal
+
+print( reduce(lambda x, y: x+y, range(10)))  # lægger alle tal sammen
+
+print( reduce(lambda x, y: x+y, map(lambda x: x*3, range(10))))
+
+
+#
+# nogle functools der måske kan være handy.
+# f.eks partials
+
+from functools import partial
+
+# vi fylder det første argument ud på reduce og får en ny funktion der kun
+# tager et argument.
+my_sum = partial(reduce, lambda x, y: x+y)
+
+print my_sum(range(10))
 
 
 
