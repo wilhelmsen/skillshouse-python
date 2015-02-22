@@ -4,9 +4,17 @@
 # Functions
 # Hello world.
 def print_hello_world():
+    """
+    En docstring 
+    prints hello world 
+    """
     print "Hello verden"
 
 print_hello_world()
+
+# docstrings er altid en god ide. ..virker med help(print_hello_world)
+print print_hello_world.__doc__
+
 
 # Default værdier.
 def print_hej(navn="Dårde"):
@@ -54,8 +62,6 @@ def print_mit_navn(f, navn):
     f(navn)
 
 print_mit_navn(mit_navn, "John Rambo")
-
-
 
 
 # Class
