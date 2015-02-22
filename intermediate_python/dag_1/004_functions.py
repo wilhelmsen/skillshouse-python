@@ -75,11 +75,10 @@ def change_test():
 
 change_test()
 
-# hvad skal der stå her ? 
+# hvad skal der stå her ?
 print GLOBAL_VAR
 
-# Svar 'local' Det er den global der bliver ændret
-
+# SVAR 'local' Det er den global der bliver ændret
 
 # Øvelse hvad sker der med test i enclosing scope skriver den 'local' eller
 # 'enclosing'
@@ -97,24 +96,32 @@ change_test()
 # I python 2 kan man ikke ændre i parrent scopes som ikke er globale
 # I python 3 kan man bruge nonlocal keyword
 
+
+# Nogle variable er ikke beskyttet så godt af scopes  lists og dicts er
+# "mutable" og "inmutable". Vi kan ikke reassigne variable men vi kan godt
+# ændre i dem. Også uden 'global'
+
+glist = [0, ]
+gdict = {}
+
+def mutable_test():
+    glist.append(1)
+    gdict['local'] = 0
+
+mutable_test()
+
+print glist
+print gdict
+
+
 # Øvelse hvad sker der her ... virker det
 
 # GLOBAL_VAR = "test"
 # def change_test():
 #     print GLOBAL_VAR
 #     GLOBAL_VAR = "local"
-# 
+#
 # Svar nej ... python fortolkeren bliver forviret man kan ikke mixe globalt og
 # local scope.
-
-
-
-
-
-
-
-
-
-
 
 
