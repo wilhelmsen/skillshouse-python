@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# En lile introduktion til ipython, tab-completion og help
 
 # kommentarer starter med '#'
 
