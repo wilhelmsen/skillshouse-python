@@ -158,8 +158,9 @@ def outer():
 # Lambda funktioner med mere
 
 # Lambda funtionerner unavngivne funktioner der kan bruges til små filtre. For
-# mere komplicerede funktioner er det bedst at bruge en alm navngivnen
-# funktion.
+# mere komplicerede funktioner er det bedst at bruge en alm. navngivnen
+# funktion. En lambda funktion i python kan kun fylde een linje så der er f.eks
+# ikke mulighed for if..then..else
 
 l = lambda x: x + 2
 l(3) # giver 5
@@ -174,6 +175,9 @@ print( map(lambda x: x+3, range(10)))  # lægger 3 til alle tal
 print( reduce(lambda x, y: x+y, range(10)))  # lægger alle tal sammen
 
 print( reduce(lambda x, y: x+y, map(lambda x: x*3, range(10))))
+
+
+
 
 
 #
