@@ -125,3 +125,49 @@ print gdict
 # local scope.
 
 
+# Bruger Python lexical eller dynamisk scopes
+# see bottom of page comment here : http://stackoverflow.com/questions/6171033/python-noobie-scoping-question
+
+def outer():
+    x = "test"
+    def inner():
+        # Dynamisk scoping for reads
+        print x
+
+
+def outer():
+    x = "test"
+    def inner():
+        # lexical scoping for writes
+        x = "inner"
+
+    inner()
+    print x != "inner"
+    print x == "true"
+
+
+def outer():
+    x = "test"
+    def inner():
+        print x
+        x = "inner"
+        # Error !!! can't mix 
+
+
+#
+# Lambda funktioner med mere
+
+# Lambda funtionerner unavngivne funktioner der kan bruges til små filtre. For
+# mere komplicerede funktioner er det bedst at bruge en alm navngivnen
+# funktion.
+
+l = lambda x: x + 2
+l(3) # giver 5
+
+l = lambda x,y: x+y+2
+l(3,3)  # giver 8
+
+# lambda funktioner har begrænset funktionalitet de er gode til f.eks 
+
+
+
