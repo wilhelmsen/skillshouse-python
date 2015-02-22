@@ -15,7 +15,7 @@
 # her __main__ fordi vi kører modulet som script
 print(__name__)
 
-# globalt
+# Her sætter vi __name__ som en global variable
 
 __name__ = "GLOBAL"
 print(__name__)
