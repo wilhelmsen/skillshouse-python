@@ -1,0 +1,7 @@
+optparse/argsparse/docopt
+logging
+Et template script.
+with_statemets
+læse/skrive fra/til en fil
+læse/skive til en json-fil.
+krls config_object

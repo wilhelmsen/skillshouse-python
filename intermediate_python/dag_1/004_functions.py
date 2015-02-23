@@ -177,9 +177,6 @@ print( reduce(lambda x, y: x+y, range(10)))  # lægger alle tal sammen
 print( reduce(lambda x, y: x+y, map(lambda x: x*3, range(10))))
 
 
-
-
-
 #
 # nogle functools der måske kan være handy.
 # f.eks partials
@@ -193,4 +190,64 @@ my_sum = partial(reduce, lambda x, y: x+y)
 print my_sum(range(10))
 
 
+
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+print fib(20)
+
+# Memoization decorator
+# Taken from: https://wiki.python.org/moin/PythonDecoratorLibrary#Memoize
+import collections
+import functools
+
+class memoized(object):
+   '''Decorator. Caches a function's return value each time it is called.
+   If called later with the same arguments, the cached value is returned
+   (not reevaluated).
+   '''
+   def __init__(self, func):
+      self.func = func
+      self.cache = {}
+   def __call__(self, *args):
+      if not isinstance(args, collections.Hashable):
+         # uncacheable. a list, for instance.
+         # better to not cache than blow up.
+         return self.func(*args)
+      if args in self.cache:
+         return self.cache[args]
+      else:
+         value = self.func(*args)
+         self.cache[args] = value
+         return value
+   def __repr__(self):
+      '''Return the function's docstring.'''
+      return self.func.__doc__
+   def __get__(self, obj, objtype):
+      '''Support instance methods.'''
+      return functools.partial(self.__call__, obj)
+
+@memoized
+def fib(n):
+    print "Der kaldes %i"%(n)
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+# Put evt. timer på også.
+
+# Not cached.
+print fib(20)
+
+# Cached.
+print fib(20)
 
