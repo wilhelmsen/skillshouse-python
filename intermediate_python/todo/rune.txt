@@ -1,5 +1,5 @@
 [x] Dynamic and lexical scoping:
 [x] The lambda operator and higher-order functions
-[ ] Databases
-[ ] Web programming Django
-[ ] Threads and concurrency
+[x] Databases
+[x] Web programming Django
+[x] Threads and concurrency
