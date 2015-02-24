@@ -1,4 +1,4 @@
-optparse/argsparse/docopt
+sys.argv/optparse/argsparse/docopt
 logging
 Et template script.
 with_statemets

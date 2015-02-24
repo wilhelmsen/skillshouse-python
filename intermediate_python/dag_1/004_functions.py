@@ -162,6 +162,8 @@ def outer():
 # funktion. En lambda funktion i python kan kun fylde een linje så der er f.eks
 # ikke mulighed for if..then..else
 
+# lambda *args: expression
+
 l = lambda x: x + 2
 l(3) # giver 5
 
