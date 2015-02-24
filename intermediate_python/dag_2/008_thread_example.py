@@ -33,7 +33,6 @@ class myThread (threading.Thread):
         self.print_time(self.counter, 1)
         print "Exiting " + self.name
 
-
 # Create new threads
 thread1 = myThread(1, "Thread-1", 5)
 thread2 = myThread(2, "Thread-2", 5)
