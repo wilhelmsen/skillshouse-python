@@ -5,3 +5,13 @@ with_statemets
 læse/skrive fra/til en fil
 læse/skive til en json-fil.
 krls config_object
+
+Sig noget om virtual env.
+http://simononsoftware.com/virtualenv-tutorial/
+
+sudo easy_install virtualenv
+mkdir virt_env
+virtualenv virt_env/virt1
+# virtualenv virt_env/virt1 --no-site-packages
+source virt_env/virt1/bin/activate
+deactivate
